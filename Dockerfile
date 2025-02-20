@@ -9,7 +9,7 @@ ENV APP_HOME=/app
 WORKDIR $APP_HOME
 
 # Copy JAR File
-COPY ./build/libs/*.jar /app.jar
+COPY ./target/*.jar /app.jar
 
 # Expose the application port (18080)
 EXPOSE 18080
