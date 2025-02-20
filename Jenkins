@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     // Kubernetes Deployment and Service 적용 (demo-app.yaml)
-                    sh "kubectl apply -f ./yaml/demo-app.yaml -n ${NAMESPACE}"
+                    sh "kubectl apply -f ./yaml/demo-accounts.yaml -n ${NAMESPACE}"
                 }
             }
         }
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {
                     // Kubenetes에서 특정 Deployment의 컨테이너 이미지를 업데이트
-                    sh "kubectl set image deployment/demo-app-team5-jhk-deployment demo-app-team5-jhk=${REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} --namespace=${NAMESPACE}"
+                    sh "kubectl set image deployment/demo-app-team5-account-deployment demo-app-team5-account=${REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} --namespace=${NAMESPACE}"
                 }
             }
         }
