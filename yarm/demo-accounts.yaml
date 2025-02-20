@@ -19,7 +19,7 @@ spec:
         image: k8s-vga-worker1:5000/demo-img-team5-account:latest
         imagePullPolicy: Always #IfNotPresent
         ports:
-        - containerPort: 9090
+        - containerPort: 8090
 ---
 apiVersion: v1
 kind: Service
@@ -32,6 +32,6 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 9090
+      targetPort: 8090
       nodePort: 30299
   type: NodePort
