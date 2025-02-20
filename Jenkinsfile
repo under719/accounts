@@ -23,7 +23,7 @@ pipeline {
                     // Gradle 빌드 실행
                     // sh './gradlew clean build'
                     // Maven 빌드 실행
-                    sh 'mvn clean package -DskipTests'
+                    sh 'source ./java_21.sh; mvn clean package -DskipTests'
                 }
             }
         }
