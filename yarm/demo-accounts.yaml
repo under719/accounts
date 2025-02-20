@@ -8,7 +8,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-app-team5-acount
+      app: demo-app-team5-account
   template:
     metadata:
       labels:
