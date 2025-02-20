@@ -5,6 +5,8 @@ pipeline {
         IMAGE_NAME = "demo-img-team5-account"
         IMAGE_TAG = "latest"
         NAMESPACE = "under76-test"
+        JAVA_HOME = "/usr/local/java21"
+        PATH="${JAVA_HOME}/bin:${env.PATH}"
     }
     stages {
         stage('Checkout') {
@@ -16,14 +18,14 @@ pipeline {
         stage('Build with Gradle') {
             steps {
                 script {
-                    sh 'chmod +x ./java_21.sh'
-                    sh './java_21.sh'
+                    //sh 'chmod +x ./java_21.sh'
+                    //sh './java_21.sh'
                     // Gradle 실행권한
                     // sh 'chmod +x ./gradlew'
                     // Gradle 빌드 실행
                     // sh './gradlew clean build'
                     // Maven 빌드 실행
-                    sh 'source ./java_21.sh; mvn clean package -DskipTests'
+                    sh 'mvn clean package -DskipTests'
                 }
             }
         }
