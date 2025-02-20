@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     // Kubernetes Deployment and Service 적용 (demo-app.yaml)
-                    sh "kubectl apply -f ./yarm/demo-accounts.yaml -n ${NAMESPACE}"
+                    sh "kubectl apply -f yarm/demo-accounts.yaml -n ${NAMESPACE}"
                 }
             }
         }
