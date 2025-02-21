@@ -1,22 +1,22 @@
-# demo-app.yaml
+# demo-accounts.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app-team5-account-deployment
+  name: team5-eureka-client-account
   namespace: under76-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-app-team5-account
+      app: team5-eureka-client-account
   template:
     metadata:
       labels:
-        app: demo-app-team5-account
+        app: team5-eureka-client-account
     spec:
       containers:
-      - name: demo-app-team5-account
-        image: k8s-vga-worker1:5000/demo-img-team5-account:latest
+      - name: team5-eureka-client-account
+        image: k8s-vga-worker1:5000/img-team5-eureka-client-account:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8090
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-app-team5-account-service
+  name: team5-eureka-client-account
   namespace: under76-test
 spec:
   selector:
-    app: demo-app-team5-account
+    app: team5-eureka-client-account
   ports:
     - protocol: TCP
       port: 8090
