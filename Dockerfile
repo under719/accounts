@@ -9,10 +9,10 @@ ENV APP_HOME=/app
 WORKDIR $APP_HOME
 
 # Copy JAR File
-COPY ./target/*.jar /app.jar
+COPY ./target/*.jar /eureka-client-accounts.jar
 
 # Expose the application port (18080)
 EXPOSE 18080
 
 # Run the JAR File
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/eureka-client-accounts.jar"]
