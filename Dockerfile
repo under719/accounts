@@ -1,5 +1,5 @@
 # Base image
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # Add a volume pointing to /tmp
 WORKDIR /tmp
