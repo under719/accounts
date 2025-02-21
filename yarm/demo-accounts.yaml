@@ -17,7 +17,7 @@ spec:
       containers:
       - name: demo-app-team5-account
         image: k8s-vga-worker1:5000/demo-img-team5-account:latest
-        imagePullPolicy: Always #IfNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8090
 ---
@@ -31,7 +31,7 @@ spec:
     app: demo-app-team5-account
   ports:
     - protocol: TCP
-      port: 80
+      port: 8090
       targetPort: 8090
       nodePort: 30299
   type: NodePort
