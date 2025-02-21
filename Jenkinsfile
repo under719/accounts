@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
-        IMAGE_NAME = "demo-img-team5-account"
+        IMAGE_NAME = "img-team5-eureka-client-account"
         IMAGE_TAG = "latest"
         NAMESPACE = "under76-test"
         JAVA_HOME = "/usr/local/java21"
@@ -20,12 +20,6 @@ pipeline {
         stage('Build with Maven') {
             steps {
                 script {
-                    //sh 'chmod +x ./java_21.sh'
-                    //sh './java_21.sh'
-                    // Gradle 실행권한
-                    // sh 'chmod +x ./gradlew'
-                    // Gradle 빌드 실행
-                    // sh './gradlew clean build'
                     // Maven 빌드 실행
                     sh 'mvn clean package -DskipTests'
                 }
