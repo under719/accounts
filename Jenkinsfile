@@ -11,11 +11,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh 'java -version'
+                sh 'mvn -version'
                 // Git 저장소에서 소스 코드 체크아웃 (branch 지정 master 또는 main)
                 git branch: 'main', url: 'https://github.com/under719/accounts.git'
             }
         }
-        stage('Build with Gradle') {
+        stage('Build with Maven') {
             steps {
                 script {
                     //sh 'chmod +x ./java_21.sh'
